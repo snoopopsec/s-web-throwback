@@ -16,12 +16,12 @@ const Index = () => {
           </MarqueeText>
           
           <nav className="flex flex-wrap justify-center gap-2 mt-4">
-            <Button variant="retro">HOME</Button>
-            <Button variant="neon">EDUCATION</Button>
-            <Button variant="bevel">EXPERIENCE</Button>
-            <Button variant="retro">PROJECTS</Button>
-            <Button variant="neon">OPEN SOURCE</Button>
-            <Button variant="bevel">CONTACT ME</Button>
+            <Button variant="retro" onClick={() => document.getElementById('hero')?.scrollIntoView({ behavior: 'smooth' })}>HOME</Button>
+            <Button variant="neon" onClick={() => document.getElementById('education')?.scrollIntoView({ behavior: 'smooth' })}>EDUCATION</Button>
+            <Button variant="bevel" onClick={() => document.getElementById('experience')?.scrollIntoView({ behavior: 'smooth' })}>EXPERIENCE</Button>
+            <Button variant="retro" onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}>PROJECTS</Button>
+            <Button variant="neon" onClick={() => document.getElementById('open-source')?.scrollIntoView({ behavior: 'smooth' })}>OPEN SOURCE</Button>
+            <Button variant="bevel" onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}>CONTACT ME</Button>
           </nav>
         </div>
       </header>
@@ -29,7 +29,7 @@ const Index = () => {
       {/* Main Content */}
       <main className="container mx-auto p-6 space-y-8">
         {/* Hero Section */}
-        <section className="text-center border-4 border-primary bg-card p-8 relative overflow-hidden">
+        <section id="hero" className="text-center border-4 border-primary bg-card p-8 relative overflow-hidden">
           <div 
             className="absolute inset-0 opacity-10"
             style={{
@@ -221,6 +221,179 @@ const Index = () => {
             <p>⚡ <span className="rainbow-text font-bold">Designing and delivering cybersecurity training programs.</span></p>
             <p>⚡ <BlinkText>Creating engaging and informative educational content.</BlinkText></p>
             <p>⚡ <span className="neon-glow">Mentoring and coaching individuals in digital cyber safety, ethical hacking, OSINT, and digital forensics.</span></p>
+          </div>
+        </section>
+
+        {/* Education Section */}
+        <section id="education" className="border-4 border-primary bg-card p-6">
+          <h2 className="text-5xl font-bold rainbow-text text-center mb-8 font-times">
+            🎓 <BlinkText>EDUCATION & CERTIFICATIONS</BlinkText> 🎓
+          </h2>
+          
+          <div className="space-y-6">
+            <div className="border-2 border-primary p-4 bg-background hover:bg-primary/10 transition-all hover:rotate-1">
+              <h3 className="text-2xl font-bold neon-glow font-comic mb-2">🏫 UNIVERSITY OF TEXAS AT SAN ANTONIO</h3>
+              <p className="text-lg text-foreground font-helvetica">Bachelor of Science in Information Technology</p>
+              <p className="text-lg text-foreground font-helvetica">Concentration: Cybersecurity</p>
+            </div>
+            
+            <div className="border-2 border-accent p-4 bg-muted hover:bg-accent/10 transition-all hover:-rotate-1">
+              <h3 className="text-2xl font-bold text-accent font-comic mb-2">🏆 CERTIFICATIONS</h3>
+              <div className="space-y-2 text-lg text-muted-foreground font-helvetica">
+                <p>⚡ <BlinkText>CompTIA Security+</BlinkText></p>
+                <p>⚡ <span className="neon-glow">Certified Ethical Hacker (CEH)</span></p>
+                <p>⚡ <BlinkText>CISSP Associate</BlinkText></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Experience Section */}
+        <section id="experience" className="border-4 border-secondary bg-secondary p-6">
+          <h2 className="text-5xl font-bold text-secondary-foreground text-center mb-8 font-times">
+            💼 <BlinkText>PROFESSIONAL EXPERIENCE</BlinkText> 💼
+          </h2>
+          
+          <div className="space-y-6">
+            <div className="border-2 border-secondary-foreground p-4 bg-card hover:bg-secondary/10 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold rainbow-text font-comic mb-2">🔒 INFORMATION SECURITY ENGINEER</h3>
+              <p className="text-lg neon-glow font-helvetica mb-2">Enterprise Security Solutions</p>
+              <div className="space-y-2 text-secondary-foreground font-helvetica">
+                <p>⚡ <BlinkText>Implementing advanced threat detection systems</BlinkText></p>
+                <p>⚡ <span className="rainbow-text">Conducting security assessments and audits</span></p>
+                <p>⚡ <BlinkText>Developing incident response procedures</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="border-2 border-secondary-foreground p-4 bg-card hover:bg-secondary/10 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold rainbow-text font-comic mb-2">🛡️ CYBERSECURITY SPECIALIST</h3>
+              <p className="text-lg neon-glow font-helvetica mb-2">IT Security Division</p>
+              <div className="space-y-2 text-secondary-foreground font-helvetica">
+                <p>⚡ <BlinkText>Monitoring and analyzing security events</BlinkText></p>
+                <p>⚡ <span className="rainbow-text">Penetration testing and vulnerability management</span></p>
+                <p>⚡ <BlinkText>Security awareness training delivery</BlinkText></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Projects Section */}
+        <section id="projects" className="border-4 border-destructive bg-card p-6">
+          <h2 className="text-5xl font-bold text-destructive text-center mb-8 font-times">
+            🚀 <BlinkText>CYBERSECURITY PROJECTS</BlinkText> 🚀
+          </h2>
+          
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="border-2 border-destructive p-4 bg-background hover:bg-destructive/10 transition-all hover:rotate-2">
+              <h3 className="text-2xl font-bold neon-glow font-comic mb-2">🔍 THREAT INTELLIGENCE PLATFORM</h3>
+              <p className="text-foreground font-helvetica mb-2">Automated OSINT collection and analysis system</p>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>⚡ Python, Elasticsearch, Kibana</p>
+                <p>⚡ <BlinkText>Real-time threat feed integration</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="border-2 border-destructive p-4 bg-background hover:bg-destructive/10 transition-all hover:-rotate-2">
+              <h3 className="text-2xl font-bold neon-glow font-comic mb-2">🛡️ HONEYPOT NETWORK</h3>
+              <p className="text-foreground font-helvetica mb-2">Distributed deception technology deployment</p>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>⚡ Docker, AWS, Splunk</p>
+                <p>⚡ <BlinkText>Attack pattern analysis</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="border-2 border-destructive p-4 bg-background hover:bg-destructive/10 transition-all hover:rotate-2">
+              <h3 className="text-2xl font-bold neon-glow font-comic mb-2">🔐 VULNERABILITY SCANNER</h3>
+              <p className="text-foreground font-helvetica mb-2">Custom web application security testing tool</p>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>⚡ Python, SQLMap, Burp Suite API</p>
+                <p>⚡ <BlinkText>Automated reporting system</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="border-2 border-destructive p-4 bg-background hover:bg-destructive/10 transition-all hover:-rotate-2">
+              <h3 className="text-2xl font-bold neon-glow font-comic mb-2">📊 SECURITY DASHBOARD</h3>
+              <p className="text-foreground font-helvetica mb-2">Real-time security metrics visualization</p>
+              <div className="space-y-1 text-sm text-muted-foreground">
+                <p>⚡ React, D3.js, WebSocket</p>
+                <p>⚡ <BlinkText>Multi-source data integration</BlinkText></p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Open Source Section */}
+        <section id="open-source" className="border-4 border-accent bg-muted p-6">
+          <h2 className="text-5xl font-bold neon-glow text-center mb-8 font-times">
+            🌟 <BlinkText>OPEN SOURCE CONTRIBUTIONS</BlinkText> 🌟
+          </h2>
+          
+          <div className="space-y-6">
+            <div className="border-2 border-accent p-4 bg-card hover:bg-accent/10 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold rainbow-text font-comic mb-2">🔧 SECURITY TOOLS</h3>
+              <div className="space-y-2 text-muted-foreground font-helvetica">
+                <p>⚡ <BlinkText>Contributed to OWASP ZAP automation scripts</BlinkText></p>
+                <p>⚡ <span className="neon-glow">Developed Metasploit auxiliary modules</span></p>
+                <p>⚡ <BlinkText>Enhanced Nmap NSE scripts for better enumeration</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="border-2 border-accent p-4 bg-card hover:bg-accent/10 transition-all hover:scale-105">
+              <h3 className="text-2xl font-bold rainbow-text font-comic mb-2">📚 KNOWLEDGE SHARING</h3>
+              <div className="space-y-2 text-muted-foreground font-helvetica">
+                <p>⚡ <BlinkText>Cybersecurity blog posts and tutorials</BlinkText></p>
+                <p>⚡ <span className="neon-glow">Conference presentations on OSINT techniques</span></p>
+                <p>⚡ <BlinkText>Security research publications</BlinkText></p>
+              </div>
+            </div>
+            
+            <div className="text-center mt-6">
+              <Button variant="neon" className="text-xl px-6 py-3">
+                🌟 VIEW MY GITHUB REPOSITORIES 🌟
+              </Button>
+            </div>
+          </div>
+        </section>
+
+        {/* Contact Section */}
+        <section id="contact" className="border-4 border-primary bg-secondary p-6">
+          <h2 className="text-5xl font-bold text-secondary-foreground text-center mb-8 font-times">
+            📧 <BlinkText>GET IN TOUCH!</BlinkText> 📧
+          </h2>
+          
+          <div className="max-w-2xl mx-auto text-center space-y-6">
+            <div className="border-2 border-primary p-6 bg-card hover:bg-primary/10 transition-all hover:rotate-1">
+              <MarqueeText className="text-xl font-bold text-card-foreground mb-4">
+                💌 READY TO SECURE THE CYBER WORLD TOGETHER? 💌
+              </MarqueeText>
+              
+              <div className="space-y-4 text-lg">
+                <p className="neon-glow font-helvetica">
+                  🔗 <BlinkText>LinkedIn: linkedin.com/in/danielelizondo</BlinkText>
+                </p>
+                <p className="rainbow-text font-helvetica">
+                  📧 <BlinkText>Email: daniel@cybersecurity.expert</BlinkText>
+                </p>
+                <p className="neon-glow font-helvetica">
+                  🐙 <BlinkText>GitHub: github.com/desecurity</BlinkText>
+                </p>
+                <p className="rainbow-text font-helvetica">
+                  🐦 <BlinkText>Twitter: @DanielCyberSec</BlinkText>
+                </p>
+              </div>
+              
+              <div className="mt-6">
+                <Button variant="neon" className="text-xl px-8 py-4">
+                  💬 SEND ME A MESSAGE! 💬
+                </Button>
+              </div>
+            </div>
+            
+            <div className="text-center">
+              <BlinkText className="text-2xl font-bold rainbow-text font-comic">
+                🔥 LET'S HACK THE PLANET! 🔥
+              </BlinkText>
+            </div>
           </div>
         </section>
       </main>
